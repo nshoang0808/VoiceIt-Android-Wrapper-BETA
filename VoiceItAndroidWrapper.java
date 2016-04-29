@@ -61,6 +61,7 @@ public class VoiceIt {
                     urlConnection.addRequestProperty("VsitEmail", email);
                     urlConnection.addRequestProperty("VsitPassword", GetSHA256(password));
                     urlConnection.addRequestProperty("VsitDeveloperId", developerId);
+                    urlConnection.addRequestProperty("PlatformID", "19");
                     String response = "";
                     try {
                         ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -118,6 +119,7 @@ public class VoiceIt {
                     urlConnection.addRequestProperty("VsitFirstName", firstName);
                     urlConnection.addRequestProperty("VsitLastName", lastName);
                     urlConnection.addRequestProperty("VsitDeveloperId", developerId);
+                    urlConnection.addRequestProperty("PlatformID", "19");
                     String response = "";
                     try {
                         ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -173,6 +175,7 @@ public class VoiceIt {
                     urlConnection.addRequestProperty("VsitEmail", email);
                     urlConnection.addRequestProperty("VsitPassword", GetSHA256(password));
                     urlConnection.addRequestProperty("VsitDeveloperId", developerId);
+                    urlConnection.addRequestProperty("PlatformID", "19");
                     String response = "";
                     try {
                         ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -229,6 +232,7 @@ public class VoiceIt {
                     urlConnection.addRequestProperty("VsitPassword", GetSHA256(password));
                     urlConnection.addRequestProperty("VsitDeveloperId", developerId);
                     urlConnection.setRequestProperty("Content-Type", "audio/wav");
+                    urlConnection.addRequestProperty("PlatformID", "19");
                     File file =  new File(pathToEnrollmentWav);
                     byte[] myData = new byte[(int) file.length()];
                     try {
@@ -303,6 +307,7 @@ public class VoiceIt {
                     urlConnection.addRequestProperty("VsitDeveloperId", developerId);
                     urlConnection.setRequestProperty("Content-Type", "audio/wav");
                     urlConnection.setRequestProperty("VsitwavURL", urlToEnrollmentWav);
+                    urlConnection.addRequestProperty("PlatformID", "19");
                     String response = "";
                     try {
                         ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -358,6 +363,7 @@ public class VoiceIt {
                     urlConnection.addRequestProperty("VsitEmail", email);
                     urlConnection.addRequestProperty("VsitPassword", GetSHA256(password));
                     urlConnection.addRequestProperty("VsitDeveloperId", developerId);
+                    urlConnection.addRequestProperty("PlatformID", "19");
                     String response = "";
                     try {
                         ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -414,6 +420,7 @@ public class VoiceIt {
                     urlConnection.addRequestProperty("VsitPassword", GetSHA256(password));
                     urlConnection.addRequestProperty("VsitDeveloperId", developerId);
                     urlConnection.addRequestProperty("VppText", vppText);
+                    urlConnection.addRequestProperty("PlatformID", "19");
                     String response = "";
                     try {
                         ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -469,6 +476,7 @@ public class VoiceIt {
                     urlConnection.addRequestProperty("VsitEmail", email);
                     urlConnection.addRequestProperty("VsitPassword", GetSHA256(password));
                     urlConnection.addRequestProperty("VsitDeveloperId", developerId);
+                    urlConnection.addRequestProperty("PlatformID", "19");
                     String response = "";
                     try {
                         ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -511,7 +519,7 @@ public class VoiceIt {
         return theResponse;
     }
 
-    public String authentication(final String email,final String password,final String pathToAuthenticationWav,final String accuracy, final String accuracyPasses, final String accuracyPassIncrement, final String confidence){
+    public String authentication(final String email,final String password,final String pathToAuthenticationWav,final String confidence){
         theResponse = "";
         class RunAPICall extends AsyncTask<String, Void, String> {
             @Override
@@ -524,11 +532,9 @@ public class VoiceIt {
                     urlConnection.addRequestProperty("VsitEmail", email);
                     urlConnection.addRequestProperty("VsitPassword", GetSHA256(password));
                     urlConnection.addRequestProperty("VsitDeveloperId", developerId);
-                    urlConnection.addRequestProperty("VsitAccuracy", accuracy);
-                    urlConnection.addRequestProperty("VsitAccuracyPasses", accuracyPasses);
-                    urlConnection.addRequestProperty("VsitAccuracyPassIncrement", accuracyPassIncrement);
                     urlConnection.addRequestProperty("VsitConfidence", confidence);
                     urlConnection.setRequestProperty("Content-Type", "audio/wav");
+                    urlConnection.addRequestProperty("PlatformID", "19");
                     File file =  new File(pathToAuthenticationWav);
 
                     byte[] myData = new byte[(int) file.length()];
@@ -589,7 +595,7 @@ public class VoiceIt {
         return theResponse;
     }
 
-    public String authenticationByWavURL(final String email,final String password,final String urlToAuthenticationWav,final String accuracy, final String accuracyPasses, final String accuracyPassIncrement, final String confidence){
+    public String authenticationByWavURL(final String email,final String password,final String urlToAuthenticationWav, final String confidence){
         theResponse = "";
         class RunAPICall extends AsyncTask<String, Void, String> {
             @Override
@@ -602,12 +608,10 @@ public class VoiceIt {
                     urlConnection.addRequestProperty("VsitEmail", email);
                     urlConnection.addRequestProperty("VsitPassword", GetSHA256(password));
                     urlConnection.addRequestProperty("VsitDeveloperId", developerId);
-                    urlConnection.addRequestProperty("VsitAccuracy", accuracy);
-                    urlConnection.addRequestProperty("VsitAccuracyPasses", accuracyPasses);
-                    urlConnection.addRequestProperty("VsitAccuracyPassIncrement", accuracyPassIncrement);
                     urlConnection.addRequestProperty("VsitConfidence", confidence);
                     urlConnection.setRequestProperty("Content-Type", "audio/wav");
                     urlConnection.setRequestProperty("VsitwavURL", urlToAuthenticationWav);
+                    urlConnection.addRequestProperty("PlatformID", "19");
                     String response = "";
                     try {
                         ByteArrayOutputStream out = new ByteArrayOutputStream();
