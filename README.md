@@ -27,6 +27,16 @@ To use this Wrapper in your Android Project, if you haven't already, please Sign
 
 Add the VoiceIt class to your Android Project
 
+### Permissions
+
+In order to use VoiceIt inside of your Android apps make sure you have the following permissions enabled inside of your [AndroidManifest.xml](https://developer.android.com/guide/topics/manifest/manifest-intro.html) file, that let the app access internet, recording, and give it the ability to write to external storage.
+
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.RECORD_AUDIO" />
+```
+
 ## API Calls
 
 Here are code snippets that show you how you can call the Various VoiceIt API Calls inside of your Cordova Project JavaScript Files.
